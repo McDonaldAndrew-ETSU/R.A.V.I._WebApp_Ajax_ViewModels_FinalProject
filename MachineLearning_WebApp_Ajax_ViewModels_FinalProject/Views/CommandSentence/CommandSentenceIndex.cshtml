@@ -1,0 +1,30 @@
+﻿@model CommandSentenceSimpleVM
+
+@{
+    ViewData["Title"] = "CommandSentence Index";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a asp-action="CommandSentenceDetailedIndex">Detailed CommandSentence Index</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Code-Name
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody id="commandSentenceTableBody">
+    </tbody>
+</table>
+
+@section Scripts {
+    <script src="~/js/commandSentence/commandSentenceIndex.js" type="module" defer></script>
+}

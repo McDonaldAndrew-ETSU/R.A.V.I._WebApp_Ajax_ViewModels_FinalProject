@@ -1,0 +1,27 @@
+﻿@model SentenceSimpleVM
+
+@{
+    ViewData["Title"] = "Sentence Index";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a asp-action="SentenceCreate">Create New Sentence</a> 
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Spelling
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody id="sentenceTableBody">
+    </tbody>
+</table>
+
+@section Scripts {
+    <script src="~/js/sentence/sentenceIndex.js" type="module" defer></script>
+}

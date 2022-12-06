@@ -1,0 +1,32 @@
+﻿@model SentenceDetailedVM
+
+@{
+    ViewData["Title"] = "Sentence Details";
+}
+
+<h1 id="sentenceHeading">@ViewData["Title"]</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Spelling
+        </dt>
+        <dd class = "col-sm-10" id="sentenceSpelling">
+            
+        </dd>
+        <dt class = "col-sm-2">
+            Meaning
+        </dt>
+        <dd class = "col-sm-10" id="sentenceMeaning">
+            
+        </dd>
+    </dl>
+</div>
+<div id="div">
+    <a asp-action="SentenceIndex">Back to Sentence List</a>
+</div>
+
+@section Scripts {
+    <script src="~/js/sentence/sentenceDetails.js" type="module" defer></script>
+}

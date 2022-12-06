@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Speech Index";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+
+<select id="voiceSelectBox" class="form-select">
+    <option id="defaultOption" hidden disabled selected>Select a Voice</option>
+</select>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Command Action
+            </th>
+            <th>
+                Sentence Spelling
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody id="commandSentenceTableBody">
+    </tbody>
+</table>
+
+<button id="button" type="button" class="btn btn-light">Click to Listen</button>
+<content id="content"></content>
+
+<partial name="_GreetingModal"></partial>
+<partial name="_LightBoxModal"></partial>
+
+
+@section Scripts {
+    <script src="~/js/speechRecognition/speechIndex.js" type="module" defer></script>
+    <script src="~/js/speechRecognition/_lightBoxModal.js" type="module" defer></script>
+}

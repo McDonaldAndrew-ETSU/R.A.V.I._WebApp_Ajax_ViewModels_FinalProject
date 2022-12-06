@@ -1,0 +1,68 @@
+﻿@model CommandSentenceDetailedVM
+
+@{
+    ViewData["Title"] = "CommandSentence Details";
+}
+
+<h1 id="commandSentenceHeading">@ViewData["Title"]</h1>
+<hr>
+<div class="container">
+    <div class="row">
+        <div class="col-1">
+            <dl class="row">
+                <dt class="row-sm-2">
+                    Id
+                </dt>
+                <dd class="col-sm-10" id="csId">
+
+                </dd>
+            </dl>
+        </div>
+        <div class="col-5">
+            <dl class="row">
+                <dt class="row-sm-2">
+                    Command
+                </dt>
+                <dd class="col-sm-10" id="csCommandAction">
+
+                </dd>
+                <dt class="row-sm-2">
+                    Command Information
+                </dt>
+                <dd class="col-sm-10" id="csCommandInfo">
+
+                </dd>
+                <dt class="row-sm-2">
+                    Command Type
+                </dt>
+                <dd class="col-sm-10" id="csCommandType">
+
+                </dd>
+            </dl>
+        </div>
+        <div class="col-5">
+            <dl class="row">
+                <dt class="row-sm-2">
+                    Sentence
+                </dt>
+                <dd class="col-sm-10" id="csSentenceSpelling">
+
+                </dd>
+                <dt class="row-sm-2">
+                    Sentence Meaning
+                </dt>
+                <dd class="col-sm-10" id="csSentenceMeaning">
+
+                </dd>
+            </dl>
+        </div>
+    </div>
+</div>
+
+<div id="div">
+    <a asp-action="CommandSentenceDetailedIndex">Back to Detailed CommandSentence List</a>
+</div>
+
+@section Scripts {
+    <script src="~/js/commandSentence/commandSentenceDetails.js" type="module" defer></script>
+}

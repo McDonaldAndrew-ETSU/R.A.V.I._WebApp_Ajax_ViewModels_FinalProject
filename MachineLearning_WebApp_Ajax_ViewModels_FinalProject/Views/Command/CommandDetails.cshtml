@@ -1,0 +1,38 @@
+﻿@model CommandDetailedVM
+
+@{
+    ViewData["Title"] = "Command Details";
+}
+
+<h1 id="commandHeading">@ViewData["Title"]</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Action
+        </dt>
+        <dd class = "col-sm-10" id="commandAction">
+            
+        </dd>
+        <dt class = "col-sm-2">
+            Information
+        </dt>
+        <dd class = "col-sm-10" id="commandInformation">
+            
+        </dd>
+        <dt class = "col-sm-2">
+            CommandType
+        </dt>
+        <dd class = "col-sm-10" id="commandType">
+            
+        </dd>
+    </dl>
+</div>
+<div id="div">
+    <a asp-action="CommandIndex">Back to Command List</a>
+</div>
+
+@section Scripts {
+    <script src="~/js/command/commandDetails.js" type="module" defer></script>
+}

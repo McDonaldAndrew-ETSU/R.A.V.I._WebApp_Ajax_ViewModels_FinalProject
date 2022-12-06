@@ -1,0 +1,42 @@
+﻿@model IEnumerable<string>
+
+@{
+    var user = (ApplicationUser?)ViewData["User"];
+
+    if (user == null) return;
+
+    ViewData["Title"] = $"Remove Role from {user.Name}";
+}
+
+
+<h1>@ViewData["Title"]</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Role
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var roleName in Model)
+        {
+            <tr>
+                <td>
+                    @roleName
+                </td>
+                <td>
+                    <form asp-action="removetherole">
+                        <input type="hidden" name="roleName" value="@roleName" />
+                        <input type="hidden" name="username" value="@user.UserName" />
+                        <input type="submit" value="Remove" class="btn btn-danger btn-sm" />
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Index">Back to User List</a>

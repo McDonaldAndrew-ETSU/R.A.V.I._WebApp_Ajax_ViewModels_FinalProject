@@ -1,0 +1,40 @@
+﻿@model SentenceDetailedVM
+
+@{
+    ViewData["Title"] = "Sentence Create";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="SentenceCreate" id="formSentenceCreate">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Spelling" class="control-label"></label>
+                <input id="spellingInput" asp-for="Spelling" class="form-control" />
+                <span asp-validation-for="Spelling" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Meaning" class="control-label"></label>
+                <input asp-for="Meaning" class="form-control" />
+                <span asp-validation-for="Meaning" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="SentenceIndex">Back to Sentence List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="~/js/sentence/sentenceCreate.js" type="module" defer></script>
+}

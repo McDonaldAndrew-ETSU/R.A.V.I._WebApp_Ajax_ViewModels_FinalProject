@@ -1,0 +1,51 @@
+﻿@model CommandDetailedVM
+
+@{
+    ViewData["Title"] = $"Edit Command";
+}
+
+<h1 id="commandHeading">@ViewData["Title"]</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CommandEdit" id="formCommandEdit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Action" class="control-label"></label>
+                <input asp-for="Action" class="form-control" readonly />
+                <span asp-validation-for="Action" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Information" class="control-label"></label>
+                <input asp-for="Information" class="form-control" />
+                <span asp-validation-for="Information" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CommandType" class="control-label"></label>
+                <select id="CommandType" asp-for="CommandType" class="form-select">
+                    <option hidden disabled selected>Select the Command's' Type</option>
+                    <option value="Greeting">Greeting</option>
+                    <option value="Description">Description</option>
+                    <option value="Question">Question</option>
+                    <option value="AJAX">AJAX</option>
+                </select>
+                <span asp-validation-for="CommandType" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="CommandIndex">Back to Command List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="~/js/command/commandEdit.js" type="module" defer></script>
+}

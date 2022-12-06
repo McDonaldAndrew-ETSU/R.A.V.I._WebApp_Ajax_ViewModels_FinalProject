@@ -1,0 +1,27 @@
+﻿@model CommandSimpleVM
+
+@{
+    ViewData["Title"] = "Command Index";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a asp-action="CommandCreate">Create New Command</a> 
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Action
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody id="commandTableBody">
+    </tbody>
+</table>
+
+@section Scripts{
+    <script src="~/js/command/commandIndex.js" type="module" defer></script>
+}
