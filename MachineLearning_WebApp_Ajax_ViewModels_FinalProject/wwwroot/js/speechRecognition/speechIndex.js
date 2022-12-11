@@ -20,20 +20,16 @@ recognition.interimResults = true; // configure setting that interim results sho
 let utterance = new SpeechSynthesisUtterance(); // create a SpeechSynthesis object
 
 
-function getAllVoices() {
-    return new Promise(function (resolve, reject) {
-        let id;
 
-        id = setInterval(() => {
-            if (speechSynthesis.getVoices().length !== 0) {
-                resolve(speechSynthesis.getVoices());
-                clearInterval(id);
-            }
-        }, 10);
-    });
-}
-getAllVoices().then((voices) => {
-    voices.forEach((v) => voiceSelectBox.appendChild(createSelectBoxOptions(v.name))); // line 47
+(async function getAllVoicesAsync() {
+    let voices;
+    id = setInterval(() => {
+        if (speechSynthesis.getVoices().length !== 0) {
+            voices = await speechSynthesis.getVoices();
+        }
+    }, 10);
+
+    voices.forEach((v) => voiceSelectBox.appendChild(createSelectBoxOptions(v.name))); // line 57
 
     window.addEventListener("load", checkCookieUtterance(voices)); // speechRecognitionRepository.js
 
@@ -57,7 +53,7 @@ getAllVoices().then((voices) => {
             console.log(e);
         }
     });
-});
+}) ();
 
 function createSelectBoxOptions(value) {
     const option = document.createElement("option");
